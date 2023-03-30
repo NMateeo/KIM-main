@@ -20,6 +20,25 @@ body {
 	height: 100vh;
 	font-size: 1.6rem;
 }
+
+.logo {
+	position: relative;
+	height: 100px;
+	width: 100%;
+	background-color: rgba(0, 0, 0, .6);
+	&-kim {
+		position: absolute;
+		position: fixed;
+		top: 1.1em;
+		left: 1em;
+		text-transform: uppercase;
+		text-decoration: none;
+		font-size: 3rem;
+		font-weight: bold;
+		color: #fff;
+	}
+}
+
 .navbar-desktop {
 	display: none;
 }
@@ -30,26 +49,35 @@ body {
 	height: 100vh;
 	width: 100%;
 	transform: translateX(100%);
+	transform: translateX(100%);
+	transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+	background-color: rgba(0, 0, 0, .6);
+	z-index: 100;
+
+	&--active {
+		transform: translateY(0);
+	}
 
 	&__links {
+		position: absolute;
+		top: 43%;
+		transform: translateY(-50%);
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
 		width: 100%;
 	}
-	
+
 	&__link {
 		color: #fff;
-		margin: .5em;
+		margin: 0.5em;
 		padding: 1em;
 		font-size: 2.5rem;
 		text-transform: uppercase;
 		text-decoration: none;
 	}
 }
-
-
 
 .navbar {
 	display: none;
@@ -58,12 +86,13 @@ body {
 }
 .burger-btn {
 	position: fixed;
-	top: 20px;
-	right: 30px;
-	padding: 2em;
+	top: 1.5em;
+	right: 1.5em;
+	padding: 1em 2em;
 	background: none;
 	border: 1px solid transparent;
 	cursor: pointer;
+	z-index: 1000;
 
 	&__bars,
 	&__bars::before,
@@ -85,9 +114,24 @@ body {
 	}
 }
 
-//MEDIA
+// HEADER
+
+.header {
+	position: relative;
+	height: 100vh;
+	background-image: url('../img/coding-small.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+// MEDIA
 
 @media (min-width: 768px) {
+	.logo {
+		display: none;
+	}
+
 	.navbar-mobile {
 		display: none;
 	}
@@ -98,7 +142,8 @@ body {
 	.navbar-desktop {
 		display: flex;
 		padding: 1.5em;
-		background-color: $navColor;
+		background-color: rgba(0, 0, 0, .6);
+		z-index: 5;
 
 		&__kim {
 			position: relative;
