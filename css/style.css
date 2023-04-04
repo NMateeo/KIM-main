@@ -37,6 +37,14 @@
     animation-timing-function: ease-out;
   }
 }
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 *,
 *::before,
 *::after {
@@ -191,30 +199,52 @@ body {
 }
 
 .about-us {
-  background-color: red;
-  position: relative;
   height: 100vh;
-  width: 100%;
-  overflow: hidden;
 }
-.about-us__box {
+.about-us__boxes {
   display: flex;
   flex-direction: column;
-  background-color: lime;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
 }
-.about-us__box-one {
-  display: flex;
-  justify-content: flex-start;
-  background-color: yellow;
-  width: 50%;
+.about-us__boxes-one {
+  width: 100%;
+  padding: 2em;
+  text-transform: uppercase;
 }
-.about-us__box-two {
-  display: flex;
-  justify-content: flex-end;
-  background-color: royalblue;
-  height: 100px;
-  width: 100px;
-  z-index: 200;
+.about-us__boxes-one--circle {
+  display: none;
+}
+.about-us__boxes-one-title {
+  font-size: 2em;
+  letter-spacing: 0.2em;
+  margin: 0.2em;
+  padding-left: 0.5em;
+}
+.about-us__boxes-two {
+  padding: 2em;
+}
+.about-us__boxes-two-text {
+  position: relative;
+  font-size: 2.7rem;
+  letter-spacing: 0.1em;
+  padding-top: 2.5em;
+  text-shadow: 2px 1px rgba(0, 0, 0, 0.1);
+}
+.about-us__boxes-two-text::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-top: 2px solid black;
+}
+.about-us__boxes-two span {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #9d4edd;
 }
 
 @media (min-width: 768px) {
@@ -284,5 +314,44 @@ body {
   }
   .header .heartbeat {
     animation: heartbeat 2s infinite;
+  }
+}
+@media (min-width: 1200px) {
+  .about-us__boxes {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+  }
+  .about-us__boxes-one {
+    position: relative;
+    justify-content: flex-start;
+    width: 50%;
+    bottom: 13.9em;
+    text-transform: uppercase;
+  }
+  .about-us__boxes-one--circle {
+    display: block;
+    position: absolute;
+    top: 11em;
+    right: 4em;
+    width: 14%;
+    animation: rotate 30s infinite linear;
+  }
+  .about-us__boxes-one-title {
+    font-size: 4em;
+  }
+  .about-us__boxes-two {
+    width: 50%;
+  }
+  .about-us__boxes-two-text {
+    font-size: 4.2rem;
+    letter-spacing: 1px;
+    padding: 0;
+    padding-left: 2em;
+  }
+  .about-us__boxes-two-text::before {
+    right: 10em;
+    border-left: 2px solid black;
+    border-top: none;
   }
 }/*# sourceMappingURL=style.css.map */
