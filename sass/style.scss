@@ -172,7 +172,6 @@ body {
 
 .about-us {
 	height: 100vh;
-
 	&__boxes {
 		display: flex;
 		flex-direction: column;
@@ -181,9 +180,9 @@ body {
 		font-weight: bold;
 
 		&-one {
-			width: 100%;
-			padding: 2em;
+			padding-top: 1em;
 			text-transform: uppercase;
+			align-items: center;
 
 			&--circle {
 				display: none;
@@ -192,8 +191,6 @@ body {
 			&-title {
 				font-size: 2em;
 				letter-spacing: 0.2em;
-				margin: 0.2em;
-				padding-left: 0.5em;
 			}
 		}
 
@@ -204,7 +201,7 @@ body {
 				position: relative;
 				font-size: 2.7rem;
 				letter-spacing: 0.1em;
-				padding-top: 2.5em;
+				padding-top: 1em;
 				text-shadow: 2px 1px rgba(0, 0, 0, 0.1);
 
 				&::before {
@@ -227,66 +224,87 @@ body {
 	}
 }
 
+// CARDS
+
+.cards {
+	display: flex;
+	justify-content: center;
+	margin-top: 6em;
+	align-items: center;
+
+	&__box {
+		display: flex;
+		width: 100rem;
+
+		&-card {
+			position: relative;
+			margin: 10px;
+			height: 650px;
+			width: 50%;
+			text-align: center;
+			background-position: center;
+			background-size: cover;
+			border-radius: 15px;
+			box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+			overflow: hidden;
+
+			button {
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				padding: 10px;
+				background: none;
+				border: none;
+				color: #ffffff;
+				font-size: 36px;
+				text-shadow: 2px 2px 5px rgb(0, 0, 0);
+				cursor: crosshair;
+				z-index: 10;
+
+				&:hover ~ .cards__box-card-text {
+					clip-path: circle(120% at 50% 90%);
+				}
+			}
+
+
+			&-text {
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-end;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				padding: 80px 30px;
+				background-color: rgba(0, 0, 0, 0.85);
+				color: #fff;
+				clip-path: circle(0% at 50% 90%);
+				transition: clip-path 0.8s;
+
+				h1 {
+					color: $mainColor;
+				}
+	
+				h2 {
+					margin-bottom: 30px;
+					color: $white;
+				}
+			}
+
+		}
+		
+	}
+	.one {
+		background-image: url('../img/IMG-2938.JPG');
+	}
+
+	.two {
+		background-image: url('../img/IMG_6385.jpg');
+	}
+}
 
 // MEDIA
-
-// @media (min-width: 576px) {
-// 	.about-us {
-// 		height: 100vh;
-	
-// 		&__boxes {
-// 			display: flex;
-// 			flex-direction: column;
-// 			justify-content: center;
-// 			align-items: center;
-// 			font-weight: bold;
-	
-// 			&-one {
-// 				width: 100%;
-// 				padding: 2em;
-// 				text-transform: uppercase;
-	
-// 				&--circle {
-// 					display: none;
-// 				}
-	
-// 				&-title {
-// 					font-size: 2em;
-// 					letter-spacing: 0.2em;
-// 					margin: 0.2em;
-// 					padding-left: 0.5em;
-// 				}
-// 			}
-	
-// 			&-two {
-// 				padding: 2em;
-// 				width: 100%;
-	
-// 				&-text {
-// 					font-size: 2.1rem;
-// 					letter-spacing: 1px;
-// 					padding-left: 2em;
-	
-// 					&::before {
-// 						content: "";
-// 						position: absolute;
-// 						top: 0;
-// 						left: 0;
-// 						right: 10em;
-// 						bottom: 0;
-// 						border-top: 2px solid black;
-// 					}
-// 				}
-	
-// 				span {
-// 					text-transform: uppercase;
-// 					font-weight: bold;
-// 					color: $mainColor;
-// 				}
-// 			}
-// 		}
-// 	}
-// }
 
 @media (min-width: 768px) {
 	.logo {
@@ -367,11 +385,8 @@ body {
 			animation: heartbeat 2s infinite;
 		}
 	}
-}
 
-@media (min-width: 1200px) {
 	.about-us {
-		
 		&__boxes {
 			display: flex;
 			flex-direction: row;
@@ -379,22 +394,12 @@ body {
 
 			&-one {
 				position: relative;
-				justify-content: flex-start;
 				width: 50%;
-				bottom: 13.9em;
+				top: 0;
 				text-transform: uppercase;
 
-				&--circle {
-					display: block;
-					position: absolute;
-					top: 11em;
-					right: 4em;
-					width: 14%;
-					animation: rotate 30s infinite linear;
-				}
-
 				&-title {
-					font-size: 4em;
+					font-size: 2.5em;
 				}
 			}
 
@@ -402,7 +407,7 @@ body {
 				width: 50%;
 
 				&-text {
-					font-size: 4.2rem;
+					font-size: 3rem;
 					letter-spacing: 1px;
 					padding: 0;
 					padding-left: 2em;
@@ -412,6 +417,54 @@ body {
 						border-left: 2px solid black;
 						border-top: none;
 					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.about-us {
+		&__boxes {
+			&-one {
+				top: 0;
+				&-title {
+					font-size: 3em;
+				}
+			}
+
+			&-two {
+				&-text {
+					font-size: 2.5em;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.about-us {
+		&__boxes {
+			&-one {
+				top: 0;
+				&--circle {
+					display: block;
+					position: absolute;
+					top: 9.2em;
+					right: 4.5em;
+					width: 14%;
+					animation: rotate 30s infinite linear;
+				}
+				&-title {
+					font-size: 4em;
+				}
+			}
+			&-two {
+				&-text {
+					font-size: 4.2rem;
+					letter-spacing: 1px;
+					padding: 0;
+					padding-left: 2em;
 				}
 			}
 		}
