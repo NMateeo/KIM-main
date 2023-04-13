@@ -17,7 +17,6 @@ html {
 
 body {
 	font-family: "Lato", sans-serif;
-	height: 100vh;
 	font-size: 1.6rem;
 }
 
@@ -171,7 +170,6 @@ body {
 //O NAS
 
 .about-us {
-	height: 100vh;
 	&__boxes {
 		display: flex;
 		flex-direction: column;
@@ -226,6 +224,20 @@ body {
 
 // CARDS
 
+.kim-title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&__us {
+		text-transform: uppercase;
+		font-size: 3em;
+		margin: 0.7em auto;
+		span {
+			color: $mainColor;
+		}
+	}
+}
+
 .cards {
 	display: flex;
 	justify-content: center;
@@ -237,7 +249,7 @@ body {
 		align-items: center;
 		justify-content: center;
 		width: 100rem;
-		
+
 		&-card {
 			position: relative;
 			height: 30em;
@@ -248,11 +260,11 @@ body {
 			text-align: center;
 			border-radius: 15px;
 			box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
-			
+
 			button {
 				display: none;
 			}
-			
+
 			&-text {
 				position: absolute;
 				bottom: 0;
@@ -267,20 +279,91 @@ body {
 
 				h1 {
 					color: $mainColor;
-					margin: .1em;
+					margin: 0.1em;
 				}
 			}
 		}
 	}
-	
+
 	.one {
-		background-image: url('../img/IMG-2938.JPG');
+		background-image: url("../img/IMG-2938.JPG");
+		filter: brightness(85%);
 	}
 	.two {
-		background-image: url('../img/IMG_6385.jpg');
+		background-image: url("../img/IMG_6385.jpg");
+		filter: brightness(85%);
 	}
 }
 
+//PROJECS
+
+.projects {
+	background-color: #999;
+	&__box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 15rem 0;
+		&-title {
+			font-size: 2em;
+			text-transform: uppercase;
+		}
+	}
+}
+
+//OFFERS
+
+.offers {
+	height: 100vh;
+	&__box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		padding: 2em 0;
+		&-one {
+			display: flex;
+			text-align: center;
+			justify-content: center;
+			&-title {
+				font-size: 2em;
+				letter-spacing: 0.1rem;
+				text-transform: uppercase;
+
+				span {
+					color: $mainColor;
+				}
+			}
+
+			&-text {
+				padding-top: 1em;
+			}
+		}
+		
+		&-two {
+			position: relative;
+			display: flex;
+			height: 18em;
+			width: 22em;
+			border-radius: 30px;
+			box-shadow: 0 0 15px 2px #999;
+			overflow: hidden;
+
+			&-number {
+				position: absolute;
+				margin-top: 2em;
+				margin-left: 2em;
+				justify-content: flex-start;
+				align-items: flex-start;
+				height: 100%;
+				width: 100%;
+				font-size: 2rem;
+				color: $mainColor;
+			}
+
+		}
+	}
+}
 
 // MEDIA
 
@@ -400,45 +483,54 @@ body {
 		}
 	}
 
-	// CARDS 
+	// CARDS
+	.kim-title {
+		&__us {
+			text-transform: uppercase;
+			font-size: 5em;
+			margin-top: 1em;
+			margin-bottom: 0.5em;
+			span {
+				color: $mainColor;
+			}
+		}
+	}
 
 	.cards {
-		margin-top: 6em;
-	
 		&__box {
 			width: 100rem;
 			flex-wrap: nowrap;
-	
+
 			&-card {
-				margin: 10px;
-				height: 650px;
+				margin: 0.1em;
+				height: 65rem;
 				width: 50%;
 				text-align: center;
 				background-position: center;
 				background-size: cover;
-				border-radius: 15px;
-				box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+				border-radius: 1.5rem;
+				box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.7);
 				overflow: hidden;
-	
+
 				button {
 					display: block;
 					position: absolute;
-					top: 10px;
-					right: 10px;
-					padding: 10px;
+					top: 0.1em;
+					right: 0.1em;
+					padding: 0.1em;
 					background: none;
 					border: none;
-					color: #ffffff;
-					font-size: 36px;
-					text-shadow: 2px 2px 5px rgb(0, 0, 0);
+					color: $white;
+					font-size: 3.6rem;
+					text-shadow: 0.2rem 0.2rem 0.5rem rgb(0, 0, 0);
 					cursor: crosshair;
 					z-index: 10;
-	
+
 					&:hover ~ .cards__box-card-text {
 						clip-path: circle(120% at 50% 90%);
 					}
 				}
-	
+
 				&-text {
 					display: flex;
 					flex-direction: column;
@@ -449,19 +541,22 @@ body {
 					bottom: 0;
 					right: 0;
 					left: 0;
-					padding: 80px 30px;
+					padding: 2em 1em;
+					font-size: 2.3rem;
 					background-color: rgba(0, 0, 0, 0.85);
 					color: #fff;
 					clip-path: circle(0% at 50% 90%);
 					transition: clip-path 0.8s;
-	
+
 					h1 {
 						color: $mainColor;
+						font-size: 4rem;
 					}
-	
+
 					h2 {
-						margin-bottom: 30px;
+						margin-bottom: 1em;
 						color: $white;
+						font-size: 3rem;
 					}
 				}
 			}
@@ -470,7 +565,7 @@ body {
 			background-image: url("../img/IMG-2938.JPG");
 			margin-right: 2rem;
 		}
-	
+
 		.two {
 			background-image: url("../img/IMG_6385.jpg");
 			margin-left: 2rem;

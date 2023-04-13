@@ -7,7 +7,7 @@ const navAnim = () => {
 
 	allNavItems.forEach(item => {
 		item.addEventListener("click", () => {
-			navBtn.classList.remove("navbar-mobile--active")
+			nav.classList.remove("navbar-mobile--active")
 		})
 	})
 }
