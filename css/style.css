@@ -601,6 +601,24 @@ body {
     flex-direction: column;
     width: 50%;
   }
+  .offers__box-one-title {
+    position: relative;
+  }
+  .offers__box-one-title::before {
+    position: absolute;
+    content: "";
+    left: 12.5%;
+    top: 0.8em;
+    bottom: 0;
+    right: 0;
+    width: 75%;
+    height: 100%;
+    border-bottom: 2px solid #9d4edd;
+    z-index: 100;
+  }
+  .offers__box-one-text {
+    margin-top: 1.5em;
+  }
   .offers__boxy {
     position: static;
     width: 75%;
@@ -612,6 +630,50 @@ body {
   .offers__boxy-boxes {
     margin-top: 4em;
     width: 35em;
+  }
+  .offers__boxy-boxes-number {
+    position: absolute;
+    margin: 0;
+    left: 1.5em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .offers__boxy-boxes-number h2 {
+    position: relative;
+    left: 0.4em;
+    font-size: 3.8rem;
+  }
+  .offers__boxy-boxes-number::after {
+    position: absolute;
+    content: "";
+    left: 4em;
+    top: 12.5%;
+    bottom: 0;
+    right: 0;
+    height: 75%;
+    border-left: 2px solid black;
+    z-index: 100;
+  }
+  .offers__boxy-boxes-title {
+    position: absolute;
+    left: 25%;
+    top: 0;
+    font-size: 3.6rem;
+    font-weight: 100;
+  }
+  .offers__boxy-boxes-text {
+    position: absolute;
+    left: 25%;
+    width: 18em;
+  }
+  .offers__boxy-boxes-btn-box {
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 2em;
   }
 }
 @media (min-width: 992px) {
