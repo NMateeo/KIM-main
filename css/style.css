@@ -307,7 +307,7 @@ body {
 }
 
 .projects {
-  background-color: #999;
+  background-image: linear-gradient(76.8deg, rgb(121, 45, 129) 3.6%, rgb(36, 31, 98) 90.4%);
 }
 .projects__box {
   display: flex;
@@ -318,6 +318,7 @@ body {
 .projects__box-title {
   font-size: 2em;
   text-transform: uppercase;
+  color: #fff;
 }
 
 .offers {
@@ -328,6 +329,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 1.5rem 2rem;
   padding: 2em 0;
 }
 .offers__box-one {
@@ -345,26 +347,74 @@ body {
 }
 .offers__box-one-text {
   padding-top: 1em;
+  font-size: 2.2rem;
+  letter-spacing: 0.2rem;
 }
-.offers__box-two {
+.offers__boxy-boxes {
   position: relative;
   display: flex;
+  text-align: left;
   height: 18em;
   width: 22em;
+  margin-top: 1.3em;
   border-radius: 30px;
   box-shadow: 0 0 15px 2px #999;
   overflow: hidden;
 }
-.offers__box-two-number {
+.offers__boxy-boxes-number {
   position: absolute;
-  margin-top: 2em;
-  margin-left: 2em;
-  justify-content: flex-start;
-  align-items: flex-start;
+  margin: 1em 0 0 1em;
   height: 100%;
   width: 100%;
   font-size: 2rem;
   color: #9d4edd;
+}
+.offers__boxy-boxes-title {
+  position: relative;
+  margin-top: 0.5em;
+  color: rgb(33, 33, 33);
+}
+.offers__boxy-boxes-text {
+  position: absolute;
+  width: 95%;
+  margin-top: 0.5em;
+  color: rgb(33, 33, 33);
+}
+.offers__boxy-boxes-btn-box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 62.5%;
+  width: 87%;
+}
+.offers__boxy-boxes-btn-box-one {
+  margin-top: 1em;
+  padding: 0.7em 1.5em;
+  border: 1px solid #000;
+  background: linear-gradient(76.8deg, rgb(121, 45, 129) 3.6%, rgb(36, 31, 98) 90.4%);
+  color: #fff;
+  border-radius: 2.5em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.offers__boxy-boxes-btn-box-one::before, .offers__boxy-boxes-btn-box-one::after {
+  display: block;
+  position: absolute;
+  content: "";
+  z-index: -1;
+}
+.offers__boxy-boxes-btn-box-one::before {
+  top: -30px;
+  left: -130px;
+  height: 160%;
+  width: 100px;
+  background-image: linear-gradient(-90deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+  transform: rotate(20deg);
+}
+.offers__boxy-boxes-btn-box-one:hover::before {
+  left: 130%;
 }
 
 @media (min-width: 768px) {
@@ -541,6 +591,27 @@ body {
   .cards .two {
     background-image: url("../img/IMG_6385.jpg");
     margin-left: 2rem;
+  }
+  .offers__box {
+    position: sticky;
+    flex-direction: row;
+    align-items: start;
+  }
+  .offers__box-one {
+    flex-direction: column;
+    width: 50%;
+  }
+  .offers__boxy {
+    position: static;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .offers__boxy-boxes {
+    margin-top: 4em;
+    width: 35em;
   }
 }
 @media (min-width: 992px) {
