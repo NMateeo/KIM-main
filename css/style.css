@@ -321,9 +321,6 @@ body {
   color: #fff;
 }
 
-.offers {
-  height: 100vh;
-}
 .offers__box {
   display: flex;
   justify-content: center;
@@ -417,6 +414,32 @@ body {
   left: 130%;
 }
 
+.inset {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-image: linear-gradient(76.8deg, rgb(121, 45, 129) 3.6%, rgb(36, 31, 98) 90.4%);
+  color: #fff;
+}
+.inset__boxes {
+  position: relative;
+}
+.inset__boxes-left {
+  height: 100%;
+  width: 100%;
+  text-align: left;
+}
+.inset__boxes-left--title {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  margin-left: 0.5em;
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+.inset__boxes-left--text {
+  margin-left: 0.8em;
+  font-size: 2rem;
+}
 @media (min-width: 768px) {
   .logo {
     display: none;
@@ -685,6 +708,23 @@ body {
   }
   .about-us__boxes-two-text {
     font-size: 2.5em;
+  }
+  .inset__boxes {
+    position: relative;
+    display: flex;
+    width: 100%;
+  }
+  .inset__boxes-left {
+    width: 50%;
+  }
+  .inset__boxes-right {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+  }
+  .inset__boxes-right--img {
+    background-size: cover;
   }
 }
 @media (min-width: 1200px) {
