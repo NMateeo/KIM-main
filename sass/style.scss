@@ -295,7 +295,7 @@ body {
 	}
 }
 
-//PROJECS
+//PROJECtS
 
 .projects {
 	background-image: $bgcolor;
@@ -428,7 +428,6 @@ body {
 .inset {
 	display: flex;
 	justify-content: center;
-	width: 100%;
 	background-image: $bgcolor;
 	color: $white;
 	&__boxes {
@@ -448,13 +447,103 @@ body {
 			&--text {
 				margin-left: .8em;
 				font-size: 2rem;
-			}
-
-			&--icons {
+				margin-bottom: 1em;
 			}
 		}
 		&-right {
 			&--img {
+				display: none;
+			}
+		}
+	}
+}
+
+// OPINIE //
+
+
+
+.reviews {
+	.section-heading {
+		position: relative;
+		margin: 2em 0 2em 0;
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 5rem;
+		color: $black;
+
+		&::before {
+			position: absolute;
+			content: '';
+			margin-top: .8em;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			bottom: 0;
+			right: 0;
+			width: 190px;
+			color: black;
+			border-bottom: 2px solid $mainColor;
+			z-index: 1;
+		}
+	}
+
+    &__box {
+        position: relative;
+        margin: 2em;
+        padding: 2em;
+        border-radius: 8px;
+        box-shadow: 3px 3px 10px #2e2e2e2e;
+        transition: transform .3s;
+
+        &:hover {
+            transform: scale(.95);
+        }
+    }
+
+    &__box-img {
+        position: absolute;
+        top: 8%;
+        left: 75%;
+        transform: translate(-50%, -50%);
+
+        img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+
+    &__box-quote {
+        margin-bottom: 1em;
+        font-size: 3rem;
+    }
+
+    &__box-test {
+        margin-bottom: 1em;
+        font-size: 1.4rem;
+    }
+}
+
+
+// CONTACT //
+
+.contact {
+	.box {
+		display: flex;
+		flex-direction: column;
+		height: 200px;
+		
+		&__contact {
+			margin-top: 1.5em;
+			text-align: center;
+
+			h3 {
+				margin-bottom: 1em;
+			}
+
+			p {
+				margin: 0.5em;
 			}
 		}
 	}
@@ -509,6 +598,9 @@ body {
 			&:hover {
 				color: $mainColor;
 			}
+		}
+		.reviews.section-padding {
+			padding: 6em 0;
 		}
 	}
 
@@ -790,22 +882,33 @@ body {
 	// INSET 
 
 	.inset {
+		position: relative;
+		margin-top: 5em;
 		&__boxes {
 			position: relative;
 			display: flex;
-			width: 100%;
-			&-left {
-				width: 50%;
+			
+			&-left { 
+				justify-content: flex-start;
+
+				&--title {
+					margin-right: 1em;
+				}
+
+				&--text {
+					padding-top: 1.2em;
+					margin-right: 1em;
+					font-size: 2.5rem;
+				}
 			}
 
 			&-right {
-				width: 100%;
-				display: flex;
 				justify-content: flex-end;
-				overflow: hidden;
 
 				&--img {
+					height: 100%;
 					background-size: cover;
+					display: block;
 				}
 			}
 		}
