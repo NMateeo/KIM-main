@@ -299,16 +299,23 @@ body {
 
 .projects {
 	background-image: $bgcolor;
+	height: 100vh;
 	&__box {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		flex-direction: column;
 		margin: 15rem 0;
 		&-title {
 			font-size: 2em;
 			text-transform: uppercase;
 			color: #fff;
 		}
+
+		&-text {
+			margin-top: 1.5em;
+		}
+
 	}
 }
 

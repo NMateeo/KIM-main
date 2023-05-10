@@ -308,17 +308,22 @@ body {
 
 .projects {
   background-image: linear-gradient(76.8deg, rgb(121, 45, 129) 3.6%, rgb(36, 31, 98) 90.4%);
+  height: 100vh;
 }
 .projects__box {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   margin: 15rem 0;
 }
 .projects__box-title {
   font-size: 2em;
   text-transform: uppercase;
   color: #fff;
+}
+.projects__box-text {
+  margin-top: 1.5em;
 }
 
 .offers__box {
