@@ -432,10 +432,20 @@ body {
 	color: $white;
 	&__boxes {
 		position: relative;
+		.insetShadow {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			background-color: rgba(0, 0, 0, 0.4);
+			z-index: 1;
+		}
 		&-left {
 			height: 100%;
 			width: 100%;
 			text-align: left;
+			z-index: 3;
 			&--title {
 				margin-top: 1em;
 				margin-bottom: 0.5em;
@@ -460,15 +470,14 @@ body {
 
 // OPINIE //
 
-
-
 .reviews {
 	.section-heading {
 		position: relative;
 		margin: 2em 0 2em 0;
 		text-align: center;
 		text-transform: uppercase;
-		font-size: 5rem;
+		letter-spacing: 0.1rem;
+		font-size: 4.8rem;
 		color: $black;
 
 		&::before {
@@ -529,23 +538,104 @@ body {
 // CONTACT //
 
 .contact {
+	position: relative;
+	background-image: url('../img/skyline-g95d4305e1_640.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	.title {
+		padding-top: 2em;
+		position: relative;
+		text-align: center;
+		letter-spacing: 0.1rem;
+		font-size: 4.8rem;
+		color: $white;
+		text-transform: uppercase;
+		margin: 2em 0 1em 0;
+		z-index: 2;
+
+		&::before {
+			position: absolute;
+			content: '';
+			margin-top: 1.92em;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			bottom: 0;
+			right: 0;
+			width: 190px;
+			color: black;
+			border-bottom: 2px solid $mainColor;
+			z-index: 1;
+		}
+	}
+
+	.shadow {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background-color: rgba(45, 29, 56, 0.8);
+		z-index: 1;
+	}
+
 	.box {
 		display: flex;
 		flex-direction: column;
 		height: 200px;
+		color: $white;
+		z-index: 2;
 		
 		&__contact {
 			margin-top: 1.5em;
 			text-align: center;
-
+			z-index: 2;
+			
 			h3 {
 				margin-bottom: 1em;
+				font-size: 2.6rem;
 			}
-
+			
 			p {
 				margin: 0.5em;
+				font-size: 2rem;
+			}
+			
+			.fab {
+				font-size: 3rem;
+				margin: 0 1em;
+				color: $white;
 			}
 		}
+	}
+}
+
+// FOOTER 
+
+footer {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	padding: 1em;
+	background-image: $bgcolor;
+	background-color: rgba(45, 29, 56, 0.8);
+	color: $white;
+	font-size: 1.8rem;
+	z-index: 0;
+
+	.footerShadow {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background-color: rgba(0, 0, 0, 0.6);
+		z-index: 1;
+	}
+
+	p {
+		z-index: 2;
 	}
 }
 
@@ -857,6 +947,36 @@ body {
 					margin-bottom: 2em;
 				}
 			}
+		}
+	}
+
+	// KONTAKT
+
+	.contact {
+		background-image: url('../img/skyline-g389740173_1920.jpg');
+		background-position: center;
+		height: 70vh;
+
+		.box {
+			position: relative;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: center;
+			
+			&__contact {
+				width: 100%;
+			}
+		}
+
+		.fab {
+			margin-left: 1em;
+			padding: 0;
+			transition: transform .3s;
+
+			&:hover {
+				transform: scale(1.3);
+			}
+
 		}
 	}
 }
